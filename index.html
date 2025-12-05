@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+    <div id="header">
+        <div class="container">
+            <nav>
+                <h1>ABINAYA <span> DHINESH</span> </h1>
+                <ul>
+                    <li><a href="#header">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#portfolio">Projects</a></li>
+                    <li><a href="#Contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header-text">
+                <img src="/profilePic.jpg" class="logo">
+                <p>SOFTWARE DEVELOPER & FULL-STACK DEVELOPER</p>
+                <h1>HI, I AM <span>ABINAYA</span> </h1>
+            </div>
+        </div>
+    </div>
+    <div>
+
+        <div id="about">
+            <div class="container">
+                <div class="row">
+                    <div class="about-col-1">
+                        <!-- <img src="/profilePic.jpg" > -->
+                    </div>
+                    <div class="about-col-2">
+                        <h1 class="sub-title">About me</h1>
+                        <p>Avec plus de 3 ans d'expérience en tant que développeur backend, je suis spécialisé dans la
+                            création d'applications évolutives et hautement performantes à l'aide de JavaScript, HTML,
+                            CSS, Typescript et Python. Je possède de solides connaissances en Node.js, MongoDB et API
+                            REST, et j'ai travaillé avec Angular pour l'intégration front-end. Je maîtrise également les
+                            bases de SQL et GraphQL, ce qui me permet de concevoir et d'optimiser des services backend
+                            pour une récupération fluide des données et des performances efficaces.
+
+                            Mon expérience comprend la participation à diverses opérations backend, garantissant un flux
+                            de données fluide, la sécurité et une architecture système robuste. J'aime collaborer avec
+                            des équipes interfonctionnelles pour fournir des solutions de bout en bout qui répondent à
+                            la fois aux besoins techniques et commerciaux</p>
+                        <div class="tabtitles">
+                            <p class="tablinks activelink" onclick="opentab('skills')">SKILLS</p>
+                            <p class="tablinks" onclick="opentab('experience')">EXPERIENCE</p>
+                            <p class="tablinks" onclick="opentab('education')">EDUCATION</p>
+                        </div>
+
+                        <div class="tabcontents activetab" id="skills">
+                            <i class="fa-solid fa-code"></i>
+                            <ul>
+                                <li> <span> NODE.JS </span><br>BUILD ING SCALABLE RESR API </li>
+                                <li> <span> HTML/CSS/JS </span><br>DESIGINING WEB APPLICATION </li>
+                                <li> <span> MONGODB </span><br>QUERING AND MANAGING DATABASE</li>
+                                <li> <span> GRAPHQL </span><br>QUERING AND MANAGING DATABASE</li>
+                                <li> <span> SQL </span><br>QUERING AND MANAGING DATABASE</li>
+                                <li> <span> ANGULAR </span><br>QUERING AND MANAGING DATABASE</li>
+                                <li> <span> PYTHON </span><br>QUERING AND MANAGING DATABASE</li>
+
+                            </ul>
+                        </div>
+
+
+                        <div class="tabcontents" id="experience">
+                            <i class="fa fa-book" aria-hidden="true"></i>
+                            <ul>
+                                <li> <span> MAR 2022 - AUG 2022 </span><br> Internship at L&T EduTech</li>
+                                <li> <span> AUG 2022 - MAR 2025 </span><br> Software Developer at L&T EduTech </li>
+                            </ul>
+                        </div>
+
+                        <div class="tabcontents" id="education">
+                            <i class="fa-solid fa-user-graduate"></i>
+                            <ul>
+                                <li> <span> 2016-2020 </span><br>BE COMPUTER SCIENCE AT ANNA UNNIVERSITY</li>
+                                <li> <span> 2020-2022 </span><br>ME COMPUTER SCIENCE AT ANNA UNIVERSITY </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        var tablinks = document.getElementsByClassName("tablinks");
+        var tabcontents = document.getElementsByClassName("tabcontents")
+
+        function opentab(tabname) {
+            for (tablink of tablinks) {
+                tablink.classList.remove("activelink");
+            }
+            for (tabcontent of tabcontents) {
+                tabcontent.classList.remove("activetab");
+            }
+            event.currentTarget.classList.add("activelink");
+            document.getElementById(tabname).classList.add("activetab");
+
+        }
+    </script>
+    <!-- ----------------------------PROJECTS----------------- -->
+    <div id="portfolio">
+        <div class="container">
+            <h1>MY PROJECTS</h1>
+            <div class="projects">
+                <div>
+                    <h2>LEARNING EXPERIENCE PLATFORM</h2>
+                    <img src="/lxp.png">
+                    <P>J'ai travaillé au développement d'un système complet de gestion de l'apprentissage (LMS) conçu
+                        pour les établissements d'enseignement et les programmes de formation en
+                        entreprise. Mes responsabilités comprenaient à la fois le développement backend et frontend :
+                        création d'API RESTful à l'aide de Node.js et Express.js, gestion des
+                        données avec SQL et MongoDB, et développement de tableaux de bord réactifs pour les
+                        administrateurs et les apprenants à l'aide d'Angular, HTML5, CSS3 et TypeScript.
+                        Le système était entièrement intégré à CollegeConnect et aux plateformes partenaires,
+                        garantissant un échange de données fluide.
+                        Ce projet a contribué à améliorer l'expérience d'apprentissage numérique en fournissant une
+                        interface intuitive et des analyses d'apprentissage en temps réel.</P>
+                </div>
+                <div>
+                    <h2>MASSIVE OPEN ONLINE COURSE</h2>
+                    <img src="/mooc.png">
+                    <P>J'ai contribué à la création d'une plateforme MOOC (Massive Open Online Course) similaire à
+                        Coursera et Udemy, proposant des cours en ligne gratuits et payants.
+                        J'ai participé au développement fullstack, où j'ai créé des API backend à l'aide de Node.js,
+                        optimisé la récupération des données avec GraphQL et créé des composants frontend dans Angular
+                        pour la liste des cours,
+                        l'inscription et le suivi des progrès.
+                        J'ai également mis en place l'authentification des utilisateurs, des filtres de recherche de
+                        cours,
+                        l'intégration d'une passerelle de paiement et la génération de certificats à la fin des cours.
+                        Les tests API ont été effectués à l'aide de Postman et les données ont été stockées de manière
+                        sécurisée à l'aide de MongoDB.
+                    </P>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!-- --------------------------------------------CONTACTS--------------------------------------------- -->
+<div id="Contact">
+    <div class="contactContainer">
+        <div class="contactTabs">
+            <div class="contact-left">
+
+                <h1 class="sub-title"> CONTACT ME</h1>
+                <a></a>
+                <P><i class="fa-solid fa-paper-plane"></i> md.abinayadoss@gmail.com </P>
+                <p><i class="fa-solid fa-phone-volume"></i> +33 613881100</p>
+
+                <div class="social-icons">
+                    <a href="https://www.linkedin.com/in/abinayadossdhinesh/"> <i class="fa-brands fa-linkedin"></i>
+                    </a>
+                    <a href="https://github.com/abinayavidhu"> <i class="fa-brands fa-github"></i> </a>
+                </div>
+                <a href="./assets/ABINAYA MD_CV_DÉVELOPPEUR FULL-STACK NODE JS.pdf"
+                    class="btn"> Download CV </a>
+            </div>
+            <div class="contact-right">
+                <form name ="submit-to-google-sheet">
+                    <input name="Name" type="text" placeholder="Your Name" required>
+                    <input name="Email" type="text" placeholder="Your Email" required>
+                    <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                    <button type="SUBMIT" class="btn"> Submit </button>
+                </form>
+
+<span> Message has been sent successfully</span>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbyQY2r-9hkiv7dkbiLwIPGMYlkS1hovi-NYNmQoCSOnShfDQHJvskvYvd3lmZBig5Nl/exec'
+  const form = document.forms['submit-to-google-sheet']
+
+  form.addEventListener('submit', e => {
+    e.preventDefault()
+    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+      .then(response => {
+        msg("MESSAGE HAS BEEN SENT SUCCESSFULLY")
+      })
+      .catch(error => console.error('Error!', error.message))
+  })
+</script>
+</body>
