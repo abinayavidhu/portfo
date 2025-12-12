@@ -8,6 +8,15 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+        (function () {
+            emailjs.init({
+                publicKey: "uvQuKiB4pkMmGMada",
+            });
+        })();
+    </script>
 </head>
 
 <body>
@@ -23,7 +32,9 @@
                 </ul>
             </nav>
             <div class="header-text">
-                <img src="profilePic.jpg" class="logo">
+                <img src="/profilePic.jpg" class="logo">
+            </div>
+            <div class="headlines">
                 <p>SOFTWARE DEVELOPER & FULL-STACK DEVELOPER</p>
                 <h1>HI, I AM <span>ABINAYA</span> </h1>
             </div>
@@ -114,7 +125,7 @@
             <div class="projects">
                 <div>
                     <h2>LEARNING EXPERIENCE PLATFORM</h2>
-                    <img src="lxp.png">
+                    <img src="/lxp.png">
                     <P>J'ai travaillé au développement d'un système complet de gestion de l'apprentissage (LMS) conçu
                         pour les établissements d'enseignement et les programmes de formation en
                         entreprise. Mes responsabilités comprenaient à la fois le développement backend et frontend :
@@ -128,7 +139,7 @@
                 </div>
                 <div>
                     <h2>MASSIVE OPEN ONLINE COURSE</h2>
-                    <img src="mooc.png">
+                    <img src="/mooc.png">
                     <P>J'ai contribué à la création d'une plateforme MOOC (Massive Open Online Course) similaire à
                         Coursera et Udemy, proposant des cours en ligne gratuits et payants.
                         J'ai participé au développement fullstack, où j'ai créé des API backend à l'aide de Node.js,
@@ -146,49 +157,59 @@
         </div>
     </div>
 
-<!-- --------------------------------------------CONTACTS--------------------------------------------- -->
-<div id="Contact">
-    <div class="contactContainer">
-        <div class="contactTabs">
-            <div class="contact-left">
+    <!-- --------------------------------------------CONTACTS--------------------------------------------- -->
+    <div id="Contact">
+        <div class="contactContainer">
+            <div class="contactTabs">
+                <div class="contact-left">
+                    <h1 class="sub-title"> CONTACT ME</h1>
+                    <a></a>
+                    <P><i class="fa-solid fa-paper-plane"></i> md.abinayadoss@gmail.com </P>
+                    <p><i class="fa-solid fa-phone-volume"></i> +33 613881100</p>
 
-                <h1 class="sub-title"> CONTACT ME</h1>
-                <a></a>
-                <P><i class="fa-solid fa-paper-plane"></i> md.abinayadoss@gmail.com </P>
-                <p><i class="fa-solid fa-phone-volume"></i> +33 613881100</p>
-
-                <div class="social-icons">
-                    <a href="https://www.linkedin.com/in/abinayadossdhinesh/"> <i class="fa-brands fa-linkedin"></i>
-                    </a>
-                    <a href="https://github.com/abinayavidhu"> <i class="fa-brands fa-github"></i> </a>
+                    <div class="social-icons">
+                        <a href="https://www.linkedin.com/in/abinayadossdhinesh/"> <i class="fa-brands fa-linkedin"></i>
+                        </a>
+                        <a href="https://github.com/abinayavidhu"> <i class="fa-brands fa-github"></i> </a>
+                    </div>
+                    <a href="./assets/ABINAYA MD_CV_DÉVELOPPEUR FULL-STACK NODE JS.pdf" class="btn"> Download CV </a>
                 </div>
-                <a href="ABINAYA_CV.pdf"
-                    class="btn"> Download CV </a>
-            </div>
-            <div class="contact-right">
-                <form name ="submit-to-google-sheet">
-                    <input name="Name" type="text" placeholder="Your Name" required>
-                    <input name="Email" type="text" placeholder="Your Email" required>
-                    <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
-                    <button type="SUBMIT" class="btn"> Submit </button>
-                </form>
+                <div class="contact-right">
+                    <form id="contactForm">
+                        <input id="name" name="name" type="text" placeholder="Your Name" required>
+                        <input id="email" name="email" type="email" placeholder="Your Email" required>
+                        <textarea id="message" name="message" rows="6" placeholder="Your Message" required></textarea>
+                        <button type="button" onclick="sendMessage()" class="btn">Submit</button>
+                    </form>
+                </div>
 
-<span> Message has been sent successfully</span>
             </div>
         </div>
     </div>
-</div>
-<script>
-  const scriptURL = 'https://script.google.com/macros/s/AKfycbyQY2r-9hkiv7dkbiLwIPGMYlkS1hovi-NYNmQoCSOnShfDQHJvskvYvd3lmZBig5Nl/exec'
-  const form = document.forms['submit-to-google-sheet']
+    <script>
+        function sendMessage() {
+            const serviceID = "service_0f9fwk9";
+            const templateID = "template_kzo6x37";
 
-  form.addEventListener('submit', e => {
-    e.preventDefault()
-    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-      .then(response => {
-        msg("MESSAGE HAS BEEN SENT SUCCESSFULLY")
-      })
-      .catch(error => console.error('Error!', error.message))
-  })
-</script>
+            const params = {
+                name: document.getElementById("name").value,
+                email: document.getElementById("email").value,
+                message: document.getElementById("message").value,
+            };
+
+            emailjs.send(serviceID, templateID, params)
+                .then((res) => {
+                    document.getElementById("contactForm").reset();
+                    console.log(res);
+                    alert("Your message has been sent successfully!");
+                })
+                .catch((err) => {
+                    console.error("EmailJS error:", err);
+                    alert("Something went wrong. Check console.");
+                });
+        }
+    </script>
+
 </body>
+
+</html>
